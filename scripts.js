@@ -76,15 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // When the button is clicked, add each friend's name as an 
     // li to the ul on the page.
 
-    let friendArr = ["Andy", "Antonia", "Dante", "Ernest", "Jarad", "Jen", "Joab", "Kana", "kuvvat", "Malawo", "Sari", "Sayra", "Travis"];
 
-    $('body').append('<button id = "bruceBtn"> click here for my name.<button>','<div id="bruceDiv"><div>');
+    $('body').append('<button id = "bruceBtn"> click here for my name.','<div id="bruceDiv"><div>');
 
     $('button#bruceBtn').click(function(){
         $('div#bruceDiv').append('<span>Bruce</span>')
+    });
+
+
+    let friendArr = ["Andy", "Antonia", "Dante", "Ernest", "Jarad", "Jen", "Joab", "Kana", "kuvvat", "Malawo", "Sari", "Sayra", "Travis"];
+
+    $('body').append('<button id = "nameBtn"> click here for my friends.','<ul id="nameUl"><ul>');
+    let count = 0;
+
+    $('button#nameBtn').click(function(){
+        $('ul#nameUl').append('<li>' + friendArr[count] + '</li>')
+        count++;
+        if (count >= friendArr.length) {
+            count = 0;
+        }
     })
-
-
 
 
 });
